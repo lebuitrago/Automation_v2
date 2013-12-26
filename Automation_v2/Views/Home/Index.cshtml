@@ -1,0 +1,24 @@
+﻿@{
+    ViewBag.Title = "Automation Index";
+}
+<h2>MTAS Automation - CSHTML INDEX</h2>
+
+<p>
+    Welcome to the MTAS QA website. This website will allow you to execute Automation tests.
+</p>
+
+<p>
+    In addition, it will make it easy to share Test Documentation throughout the group regardless on your physical location.
+</p>
+
+<p>
+    @Html.ActionLink( "Test Suites", "Index", "TestSuites")
+</p>
+
+<div>
+    <a class="btn btn-danger btn-lg btn-block" ng-href="#/list/">List via $RESOURCE</a>
+    <a class="btn btn-danger btn-lg btn-block" ng-href="#/listHTTP/">List via $HTTP</a>
+</div>
+<div class="container">
+    <div ng-view></div>
+</div>

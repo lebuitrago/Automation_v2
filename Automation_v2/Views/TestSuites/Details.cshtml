@@ -1,0 +1,33 @@
+@model Automation_v2.Models.TestSuite
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>@Model.Name</h2>
+
+<fieldset>
+    <legend></legend>
+
+    <div class="display-label">Name</div>
+    <div class="display-field">@Model.Name</div>
+
+    <div class="display-label">TestCases</div>
+    <table class="table table-condensed" style="width: 50%">
+        @foreach (var testcase in @ViewBag.TestCasesAssigned)
+        {
+        <tr class="success">
+            <td>
+                <div class="display-field">@testcase.Name</div>
+            </td>
+        </tr>
+        }
+    </table>
+
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id=Model.TestSuiteId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
+
+

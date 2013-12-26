@@ -1,0 +1,16 @@
+﻿<h1>$RESOURCE : Maya said {{test}}</h1>
+
+<p>HTTP status code: {{status}}</p>
+
+<table class="table table-striped table-condensed table-hover">
+    <thead>
+        <th>TestSuiteId</th>
+        <th>Name</th>
+    </thead>
+    <tbody ng-controller="FirstTryController" ng-repeat="TestSuites in items">
+        <tr ng-repeat="testsuiteItem in TestSuites">
+            <td>{{testsuiteItem.TestSuiteId}}</td>
+            <td>{{testsuiteItem.Name}}</td>
+        </tr>
+    </tbody>
+</table>

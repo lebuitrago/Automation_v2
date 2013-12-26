@@ -1,0 +1,42 @@
+@model IEnumerable<Automation_v2.Models.TestSuite>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Test Suites</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+    <br />
+    The following Test Suites have been created.
+    <br />
+</p>
+<table class="table">
+    <tr>
+        <th>
+            Name
+        </th>
+        <th>
+            TestCases
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model) {
+    <tr>
+        <td>
+            <a href=@Url.Action("Details", new { id = item.TestSuiteId })>@item.Name</a>
+        </td>
+        <td>
+			@Html.DisplayTextFor(_ => item.TestCases).ToString()
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.TestSuiteId }) |
+            @Html.ActionLink("Details", "Details", new { id=item.TestSuiteId }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.TestSuiteId })
+        </td>
+    </tr>
+    }
+</table>
+

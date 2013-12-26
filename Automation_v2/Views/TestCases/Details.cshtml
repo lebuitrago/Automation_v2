@@ -1,0 +1,23 @@
+@model Automation_v2.Models.TestCase
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>TestCase</legend>
+
+    <div class="display-label">Name</div>
+    <div class="display-field">@Model.Name</div>
+
+    <div class="display-label">TestSuite</div>
+    <div class="display-field">@(Model.TestSuite == null ? "None" : Model.TestSuite.Name)</div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id=Model.TestCaseId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
+
+

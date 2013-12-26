@@ -1,0 +1,46 @@
+@model IEnumerable<Automation_v2.Models.TestCase>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Test Cases</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table table-bordered">
+    <tr>
+        <th>
+            Name
+        </th>
+        <th>
+            TestSuite
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+			@item.Name
+        </td>
+        <td>
+			@(item.TestSuite == null ? "None" : item.TestSuite.Name)
+@*            @if(item.TestSuite != null)
+            {
+                @item.TestSuite.Name
+            }*@
+            @*@item.TestSuite.Name*@
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.TestCaseId }) |
+            @Html.ActionLink("Details", "Details", new { id=item.TestCaseId }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.TestCaseId })
+        </td>
+    </tr>
+}
+
+</table>
+
+
